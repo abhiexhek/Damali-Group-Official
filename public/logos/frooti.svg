@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" fill="none">
+  <rect x="4" y="6" width="312" height="88" rx="14" fill="#FFC700" stroke="#F5B300" stroke-width="2"/>
+  <path d="M 282 14 C 294 12, 305 20, 301 32 C 293 30, 285 24, 282 14 Z" fill="#008836"/>
+  <circle cx="295" cy="20" r="3" fill="#FFEB60"/>
+
+  <path d="M 28 26 H 58 V 37 H 42 V 47 H 55 V 58 H 42 V 74 H 28 Z" fill="#1C1814"/>
+  <path d="M 66 26 H 94 C 104 26, 109 31, 109 41 C 109 48, 105 53, 98 55 L 111 74 H 95 L 84 57 H 80 V 74 H 66 Z M 80 37 V 47 H 92 C 95 47, 97 45, 97 42 C 97 39, 95 37, 92 37 Z" fill="#1C1814"/>
+  <path d="M 132 25 C 146 25, 156 36, 156 50 C 156 64, 146 75, 132 75 C 118 75, 108 64, 108 50 C 108 36, 118 25, 132 25 Z M 132 37 C 125 37, 121 42, 121 50 C 121 58, 125 63, 132 63 C 139 63, 143 58, 143 50 C 143 42, 139 37, 132 37 Z" fill="#1C1814"/>
+  <path d="M 180 25 C 194 25, 204 36, 204 50 C 204 64, 194 75, 180 75 C 166 75, 156 64, 156 50 C 156 36, 166 25, 180 25 Z M 180 37 C 173 37, 169 42, 169 50 C 169 58, 173 63, 180 63 C 187 63, 191 58, 191 50 C 191 42, 187 37, 180 37 Z" fill="#1C1814"/>
+  <path d="M 208 26 H 244 V 38 H 233 V 74 H 219 V 38 H 208 Z" fill="#1C1814"/>
+  <path d="M 252 26 H 267 V 74 H 252 Z" fill="#1C1814"/>
+  <text x="160" y="86" dominant-baseline="middle" text-anchor="middle" fill="#5A471C" font-family="Arial, sans-serif" font-weight="bold" font-size="8" letter-spacing="2.5">MANGO DRINK • PARLE AGRO</text>
+</svg>

@@ -1,0 +1,24 @@
+[
+  {
+    "id": "1784376737965",
+    "name": "Abhihe",
+    "businessName": "asdasd",
+    "phone": "asdasdad",
+    "email": "asdasd@gmail.com",
+    "location": "asdads",
+    "interestedBrand": "Panasonic",
+    "message": "adasd",
+    "timestamp": "2026-07-18T12:12:17.965Z"
+  },
+  {
+    "id": "1784379833815",
+    "name": "Test User",
+    "businessName": "Test Biz",
+    "phone": "9812345678",
+    "email": "test@example.com",
+    "location": "Kathmandu",
+    "interestedBrand": "Skyworth",
+    "message": "Please send catalog",
+    "timestamp": "2026-07-18T13:03:53.814Z"
+  }
+]

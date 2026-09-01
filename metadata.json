@@ -1,0 +1,6 @@
+{
+  "name": "Nepal Distributor Landing Page",
+  "description": "Modern premium B2B distributor landing page for Damali Group, official FMCG & Home Appliance distributor based in Morang, Nepal. Features official brand showcases, secure direct email contact forms, and brand theme presets.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

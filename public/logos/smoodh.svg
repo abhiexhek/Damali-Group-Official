@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" fill="none">
+  <rect x="10" y="6" width="200" height="48" rx="24" fill="#3B1C08"/>
+  <path d="M 20 30 Q 110 18 200 30 Q 110 38 20 30 Z" fill="#52270B"/>
+  <text x="110" y="36" dominant-baseline="middle" text-anchor="middle" fill="#FFE8D6" font-family="Georgia, serif" font-style="italic" font-weight="900" font-size="28" letter-spacing="1">smoodh</text>
+  <text x="110" y="48" dominant-baseline="middle" text-anchor="middle" fill="#D4A373" font-family="sans-serif" font-weight="bold" font-size="7" letter-spacing="1.5">PARLE AGRO</text>
+</svg>

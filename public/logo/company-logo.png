@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="55 25 270 248" width="100%" height="100%">
+  <defs>
+    <linearGradient id="damaliPrimaryGrad" x1="10%" y1="10%" x2="90%" y2="90%">
+      <stop offset="0%" stop-color="#2563EB" />
+      <stop offset="45%" stop-color="#1E3A8A" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="damaliBevelGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="50%" stop-color="#1D4ED8" />
+      <stop offset="100%" stop-color="#0F2854" />
+    </linearGradient>
+    <linearGradient id="damaliStemGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0F254C" />
+      <stop offset="100%" stop-color="#1E40AF" />
+    </linearGradient>
+    <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#071224" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <g id="damali-symbol" filter="url(#subtleShadow)">
+    <!-- Leaves on top left -->
+    <!-- Top-left large leaf -->
+    <path d="M 152 92 C 140 62, 158 35, 185 52 C 190 75, 172 98, 152 92 Z" fill="url(#damaliPrimaryGrad)" />
+    <!-- Far-left pointed leaf -->
+    <path d="M 175 104 C 130 96, 95 82, 70 106 C 110 126, 142 120, 175 104 Z" fill="url(#damaliPrimaryGrad)" />
+    <!-- Center leaf dividing ridge -->
+    <path d="M 70 106 C 110 108, 140 106, 172 104" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+    <!-- Small lower leaf -->
+    <path d="M 158 126 C 174 118, 198 124, 194 138 C 170 144, 150 134, 158 126 Z" fill="url(#damaliPrimaryGrad)" />
+
+    <!-- Arc Dots -->
+    <circle cx="196" cy="86" r="6.8" fill="url(#damaliPrimaryGrad)" />
+    <circle cx="222" cy="85" r="7.4" fill="url(#damaliPrimaryGrad)" />
+    <circle cx="248" cy="92" r="7.2" fill="url(#damaliPrimaryGrad)" />
+    <circle cx="274" cy="106" r="7.4" fill="url(#damaliPrimaryGrad)" />
+
+    <!-- Inner curve dots -->
+    <circle cx="214" cy="128" r="6.6" fill="url(#damaliPrimaryGrad)" />
+    <circle cx="228" cy="148" r="6.6" fill="url(#damaliPrimaryGrad)" />
+    <circle cx="236" cy="172" r="6.6" fill="url(#damaliPrimaryGrad)" />
+
+    <!-- Main 'D' Shape with 3D Sculpted Arch -->
+    <!-- Left Vertical Column / Stem -->
+    <path d="M 120 132 L 168 138 L 168 250 L 120 250 Z" fill="url(#damaliStemGrad)" />
+    <!-- Left Stem Bevel edge -->
+    <path d="M 94 258 L 120 250 L 120 132 L 94 136 Z" fill="#061224" />
+    <path d="M 92 258 L 195 258 L 195 250 L 92 250 Z" fill="#061224" />
+
+    <!-- Sweeping Outer Arc of D -->
+    <path d="M 150 106 C 220 95, 298 120, 304 182 C 310 242, 245 258, 170 258 C 235 258, 275 238, 268 185 C 260 136, 205 120, 150 124 Z" fill="url(#damaliPrimaryGrad)" />
+    <path d="M 165 106 C 235 96, 304 125, 304 185 C 304 242, 248 258, 175 258 C 232 258, 274 235, 270 188 C 265 142, 218 122, 165 122 Z" fill="url(#damaliBevelGrad)" />
+  </g>
+</svg>

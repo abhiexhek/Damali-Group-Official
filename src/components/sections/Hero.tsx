@@ -109,88 +109,151 @@ export const Hero: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Right Column: Floating Brand Logos Animation Area */}
-        <div className="lg:col-span-5 relative flex items-center justify-center min-h-[400px] lg:min-h-[500px]">
-          {/* Central ambient glowing shield with Dim to Bright animated Damali Logo */}
+        {/* Right Column: Floating Brand Logos & Main Company Logo Area */}
+        <div className="lg:col-span-5 relative flex items-center justify-center min-h-[460px] sm:min-h-[520px] lg:min-h-[580px] w-full select-none">
+          {/* Central transparent animated Damali Logo container with smooth ambient aura */}
           <motion.div 
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
-            className="w-72 h-72 sm:w-88 sm:h-88 rounded-full bg-gradient-to-b from-primary/10 via-surface/80 to-primary/5 border border-primary/20 flex flex-col items-center justify-center text-center relative shadow-2xl p-6 backdrop-blur-sm"
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative z-10 flex flex-col items-center justify-center text-center p-2 sm:p-4"
           >
-            {/* Glowing animated pulsing aura from dim to bright */}
+            {/* Soft ambient luminous halo behind the transparent logo */}
             <motion.div
               animate={{
-                opacity: [0.35, 0.9, 0.35],
-                scale: [0.94, 1.1, 0.94]
+                opacity: [0.35, 0.7, 0.35],
+                scale: [0.95, 1.08, 0.95]
               }}
               transition={{
                 repeat: Infinity,
-                duration: 3.5,
+                duration: 4,
                 ease: "easeInOut"
               }}
-              className="absolute inset-0 rounded-full bg-radial from-primary/25 via-transparent to-transparent pointer-events-none"
+              className="absolute w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-radial from-primary/25 via-primary/5 to-transparent pointer-events-none -z-10 blur-2xl"
             />
 
-            {/* D Logo with Dim-to-Bright breathing animation (pure transparent mark, perfectly centered) */}
-            <DamaliLogo size="hero" showText={false} animated={true} className="relative z-10" />
+            {/* Official Authentic 2D Damali Logo with smooth breathing float */}
+            <DamaliLogo size="hero" showText={true} animated={true} className="relative z-10" />
           </motion.div>
 
-          {/* Floating Brand Badges (Staggered Floating Paths using Framer Motion) */}
-          
-          {/* LG Badge */}
-          <motion.div
-            animate={{ y: [0, -15, 0] }}
-            transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-            className="absolute top-1/10 left-1/10 glass-card px-3.5 py-2 rounded-full flex items-center gap-2 shadow-lg bg-white/95 dark:bg-slate-900/95 border border-slate-200/90 dark:border-slate-800"
-          >
-            <img src="/logos/lg.svg" alt="LG" className="h-5 w-auto object-contain" />
-          </motion.div>
+          {/* ================= SATELLITE ORBIT BRAND LOGOS (ZERO COVER / ZERO OVERLAP) ================= */}
+          {/* Brand badges orbit strictly in their own designated radial perimeter outside the company logo, ensuring complete clearance */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-30 scale-75 sm:scale-85 md:scale-90 lg:scale-100">
+            {/* Subtle orbital ring guide behind the badges */}
+            <div className="absolute w-[450px] h-[410px] rounded-full border border-dashed border-slate-200/60 dark:border-slate-800/60 pointer-events-none -z-10" />
 
-          {/* Coca-Cola Badge */}
-          <motion.div
-            animate={{ y: [0, 15, 0] }}
-            transition={{ repeat: Infinity, duration: 6, ease: "easeInOut", delay: 1 }}
-            className="absolute top-1/4 right-5 glass-card px-4 py-2 rounded-full flex items-center gap-2 shadow-lg bg-white/95 dark:bg-slate-900/95 border border-slate-200/90 dark:border-slate-800"
-          >
-            <img src="/logos/coca-cola.svg" alt="Coca-Cola" className="h-5 w-auto object-contain" />
-          </motion.div>
+            {/* 1. Kent Badge - Top */}
+            <motion.div
+              animate={{ 
+                x: [0, 4, -4, 2, 0],
+                y: [-205, -210, -200, -207, -205],
+                rotate: [0, 1, -1, 0.5, 0]
+              }}
+              transition={{ repeat: Infinity, duration: 6.5, ease: "easeInOut" }}
+              whileHover={{ scale: 1.15, zIndex: 50 }}
+              className="absolute pointer-events-auto z-30 glass-card px-3.5 py-1.5 rounded-full flex items-center shadow-lg hover:shadow-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 transition-all cursor-pointer select-none"
+            >
+              <img src="/logos/kent.svg" alt="Kent" className="h-4 sm:h-4.5 w-auto object-contain" />
+            </motion.div>
 
-          {/* Samsung Badge */}
-          <motion.div
-            animate={{ y: [0, -12, 0] }}
-            transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 2 }}
-            className="absolute bottom-1/5 left-5 glass-card px-3.5 py-1.5 rounded-full flex items-center gap-2 shadow-lg bg-white/95 dark:bg-slate-900/95 border border-slate-200/90 dark:border-slate-800"
-          >
-            <img src="/logos/samsung.svg" alt="Samsung" className="h-4.5 w-auto object-contain" />
-          </motion.div>
+            {/* 2. Coca-Cola Badge - Top-Right */}
+            <motion.div
+              animate={{ 
+                x: [195, 200, 190, 197, 195],
+                y: [-145, -140, -150, -143, -145],
+                rotate: [0, 1.2, -1.2, 0.8, 0]
+              }}
+              transition={{ repeat: Infinity, duration: 7.2, ease: "easeInOut", delay: 0.8 }}
+              whileHover={{ scale: 1.15, zIndex: 50 }}
+              className="absolute pointer-events-auto z-30 glass-card px-4 py-1.5 rounded-full flex items-center shadow-lg hover:shadow-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 transition-all cursor-pointer select-none"
+            >
+              <img src="/logos/coca-cola.svg" alt="Coca-Cola" className="h-4.5 sm:h-5 w-auto object-contain" />
+            </motion.div>
 
-          {/* Frooti / Parle Agro */}
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut", delay: 1.5 }}
-            className="absolute bottom-1/10 right-1/10 glass-card px-3.5 py-1.5 rounded-full flex items-center gap-2 shadow-lg bg-white/95 dark:bg-slate-900/95 border border-slate-200/90 dark:border-slate-800"
-          >
-            <img src="/logos/frooti.svg" alt="Frooti" className="h-5 w-auto object-contain" />
-          </motion.div>
+            {/* 3. Haier Badge - Right */}
+            <motion.div
+              animate={{ 
+                x: [225, 230, 220, 227, 225],
+                y: [0, -6, 6, -3, 0],
+                rotate: [0, 1, -1, 0.5, 0]
+              }}
+              transition={{ repeat: Infinity, duration: 6.8, ease: "easeInOut", delay: 1.5 }}
+              whileHover={{ scale: 1.15, zIndex: 50 }}
+              className="absolute pointer-events-auto z-30 glass-card px-3.5 py-1.5 rounded-full flex items-center shadow-lg hover:shadow-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 transition-all cursor-pointer select-none"
+            >
+              <img src="/logos/haier.svg" alt="Haier" className="h-3.5 sm:h-4 w-auto object-contain" />
+            </motion.div>
 
-          {/* Panasonic Badge */}
-          <motion.div
-            animate={{ y: [0, -8, 0] }}
-            transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 3 }}
-            className="absolute top-1/5 right-1/3 glass-card px-4 py-2 rounded-full flex items-center gap-2 shadow-lg bg-white/95 dark:bg-slate-900/95 border border-slate-200/90 dark:border-slate-800"
-          >
-            <img src="/logos/panasonic.svg" alt="Panasonic" className="h-4 w-auto object-contain" />
-          </motion.div>
+            {/* 4. Frooti Badge - Bottom-Right */}
+            <motion.div
+              animate={{ 
+                x: [195, 190, 200, 193, 195],
+                y: [155, 160, 150, 157, 155],
+                rotate: [0, 1.2, -1.2, 0.8, 0]
+              }}
+              transition={{ repeat: Infinity, duration: 7.5, ease: "easeInOut", delay: 2.2 }}
+              whileHover={{ scale: 1.15, zIndex: 50 }}
+              className="absolute pointer-events-auto z-30 glass-card px-3.5 py-1.5 rounded-full flex items-center shadow-lg hover:shadow-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 transition-all cursor-pointer select-none"
+            >
+              <img src="/logos/frooti.svg" alt="Frooti" className="h-4 sm:h-4.5 w-auto object-contain" />
+            </motion.div>
 
-          {/* Red Bull */}
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ repeat: Infinity, duration: 6.5, ease: "easeInOut", delay: 0.5 }}
-            className="absolute bottom-1/3 left-1/4 glass-card px-3.5 py-1.5 rounded-full flex items-center gap-2 shadow-lg bg-white/95 dark:bg-slate-900/95 border border-slate-200/90 dark:border-slate-800"
-          >
-            <img src="/logos/red-bull.svg" alt="Red Bull" className="h-5 w-auto object-contain" />
-          </motion.div>
+            {/* 5. Samsung Badge - Bottom */}
+            <motion.div
+              animate={{ 
+                x: [0, -5, 5, -2, 0],
+                y: [215, 220, 210, 217, 215],
+                rotate: [0, -1, 1, -0.5, 0]
+              }}
+              transition={{ repeat: Infinity, duration: 6.2, ease: "easeInOut", delay: 1.2 }}
+              whileHover={{ scale: 1.15, zIndex: 50 }}
+              className="absolute pointer-events-auto z-30 glass-card px-4 py-1.5 rounded-full flex items-center shadow-lg hover:shadow-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 transition-all cursor-pointer select-none"
+            >
+              <img src="/logos/samsung.svg" alt="Samsung" className="h-4 sm:h-4.5 w-auto object-contain" />
+            </motion.div>
+
+            {/* 6. Red Bull Badge - Bottom-Left */}
+            <motion.div
+              animate={{ 
+                x: [-195, -200, -190, -197, -195],
+                y: [155, 150, 160, 153, 155],
+                rotate: [0, -1.2, 1.2, -0.8, 0]
+              }}
+              transition={{ repeat: Infinity, duration: 7.0, ease: "easeInOut", delay: 2.8 }}
+              whileHover={{ scale: 1.15, zIndex: 50 }}
+              className="absolute pointer-events-auto z-30 glass-card px-3.5 py-1.5 rounded-full flex items-center shadow-lg hover:shadow-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 transition-all cursor-pointer select-none"
+            >
+              <img src="/logos/red-bull.svg" alt="Red Bull" className="h-4 sm:h-4.5 w-auto object-contain" />
+            </motion.div>
+
+            {/* 7. LG Badge - Left */}
+            <motion.div
+              animate={{ 
+                x: [-225, -220, -230, -223, -225],
+                y: [0, 6, -6, 3, 0],
+                rotate: [0, -1, 1, -0.5, 0]
+              }}
+              transition={{ repeat: Infinity, duration: 6.6, ease: "easeInOut", delay: 1.8 }}
+              whileHover={{ scale: 1.15, zIndex: 50 }}
+              className="absolute pointer-events-auto z-30 glass-card px-3.5 py-1.5 rounded-full flex items-center shadow-lg hover:shadow-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 transition-all cursor-pointer select-none"
+            >
+              <img src="/logos/lg.svg" alt="LG" className="h-4 sm:h-4.5 w-auto object-contain" />
+            </motion.div>
+
+            {/* 8. Panasonic Badge - Top-Left */}
+            <motion.div
+              animate={{ 
+                x: [-195, -190, -200, -193, -195],
+                y: [-145, -150, -140, -147, -145],
+                rotate: [0, -1.2, 1.2, -0.8, 0]
+              }}
+              transition={{ repeat: Infinity, duration: 7.4, ease: "easeInOut", delay: 0.4 }}
+              whileHover={{ scale: 1.15, zIndex: 50 }}
+              className="absolute pointer-events-auto z-30 glass-card px-3.5 py-1.5 rounded-full flex items-center shadow-lg hover:shadow-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 transition-all cursor-pointer select-none"
+            >
+              <img src="/logos/panasonic.svg" alt="Panasonic" className="h-3.5 sm:h-4 w-auto object-contain" />
+            </motion.div>
+          </div>
         </div>
       </Container>
     </section>

@@ -41,10 +41,10 @@ export const Navbar: React.FC = () => {
             <DamaliLogo size="sm" showText={false} className="w-full h-full" />
           </div>
           <div className="flex flex-col">
-            <span className="font-display font-black text-base tracking-tight text-text-heading group-hover:text-primary transition-colors duration-300 leading-tight">
+            <span className="font-display font-semibold text-base tracking-tight text-text-heading group-hover:text-primary transition-colors duration-300 leading-tight">
               {COMPANY_CONFIG.shortName}
             </span>
-            <span className="text-[10px] text-primary font-bold tracking-widest uppercase">
+            <span className="text-[10px] text-primary font-medium tracking-wider uppercase">
               Official Distributor
             </span>
           </div>
@@ -56,7 +56,7 @@ export const Navbar: React.FC = () => {
             <a
               key={`desktop-nav-${link.href}-${idx}`}
               href={link.href}
-              className="text-sm font-semibold text-text-body hover:text-primary transition-colors duration-300 relative py-2 group"
+              className="text-sm font-medium text-text-body hover:text-primary transition-colors duration-300 relative py-2 group"
             >
               {link.label}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
@@ -70,12 +70,12 @@ export const Navbar: React.FC = () => {
           <div className="relative">
             <button
               onClick={() => setShowThemeMenu(!showThemeMenu)}
-              className="flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg border border-border-color hover:border-primary/40 text-text-body transition-all duration-300 cursor-pointer"
+              className="flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider rounded-lg border border-border-color hover:border-primary/40 text-text-body transition-all duration-300 cursor-pointer"
               style={{ backgroundColor: currentTheme.surface }}
             >
               <Palette className="w-4 h-4 text-primary" />
               <span>Theme Preset:</span>
-              <span className="text-primary font-black">{currentTheme.name}</span>
+              <span className="text-primary font-semibold">{currentTheme.name}</span>
             </button>
 
             <AnimatePresence>
@@ -181,14 +181,14 @@ export const Navbar: React.FC = () => {
               ))}
               
               <div className="pt-4 border-t border-border-color px-4 flex flex-col gap-3">
-                <div className="text-xs text-text-muted font-bold uppercase tracking-wider">
-                  Current Theme: <span className="text-primary font-black">{currentTheme.name}</span>
+                <div className="text-xs text-text-muted font-medium uppercase tracking-wider">
+                  Current Theme: <span className="text-primary font-semibold">{currentTheme.name}</span>
                 </div>
                 
                 <a
                   href="#contact"
                   onClick={() => setIsOpen(false)}
-                  className="w-full text-center py-3 rounded-lg text-sm font-bold tracking-wider uppercase text-white bg-primary hover:bg-primary-dark shadow-md"
+                  className="w-full text-center py-3 rounded-lg text-sm font-semibold tracking-wider uppercase text-white bg-primary hover:bg-primary-dark shadow-md"
                 >
                   Become Dealer
                 </a>

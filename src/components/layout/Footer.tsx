@@ -36,10 +36,10 @@ export const Footer: React.FC = () => {
                 <DamaliLogo size="sm" showText={false} className="w-full h-full" />
               </div>
               <div className="flex flex-col">
-                <span className="font-display font-black text-base text-white tracking-tight leading-tight">
+                <span className="font-display font-semibold text-base text-white tracking-tight leading-tight">
                   {COMPANY_CONFIG.shortName}
                 </span>
-                <span className="text-[10px] text-primary font-bold tracking-widest uppercase">
+                <span className="text-[10px] text-primary font-medium tracking-wider uppercase">
                   Nepal B2B Portal
                 </span>
               </div>
@@ -81,7 +81,7 @@ export const Footer: React.FC = () => {
 
           {/* Column 2: Corporate Sitemap Links */}
           <div className="space-y-4">
-            <h4 className="text-sm font-bold font-display uppercase tracking-widest text-white border-b border-slate-900 pb-2">
+            <h4 className="text-xs font-semibold font-display uppercase tracking-wider text-white border-b border-slate-900 pb-2">
               Sitemap Navigation
             </h4>
             <ul className="space-y-2.5 font-sans text-xs">
@@ -100,7 +100,7 @@ export const Footer: React.FC = () => {
 
           {/* Column 3: B2B Services / Administrative Tools */}
           <div className="space-y-4">
-            <h4 className="text-sm font-bold font-display uppercase tracking-widest text-white border-b border-slate-900 pb-2">
+            <h4 className="text-xs font-semibold font-display uppercase tracking-wider text-white border-b border-slate-900 pb-2">
               B2B Services
             </h4>
             <ul className="space-y-2.5 font-sans text-xs">
@@ -119,7 +119,7 @@ export const Footer: React.FC = () => {
 
           {/* Column 4: Contact details */}
           <div className="space-y-4">
-            <h4 className="text-sm font-bold font-display uppercase tracking-widest text-white border-b border-slate-900 pb-2">
+            <h4 className="text-xs font-semibold font-display uppercase tracking-wider text-white border-b border-slate-900 pb-2">
               Morang Head Office
             </h4>
             <div className="space-y-3 font-sans text-xs text-slate-400">

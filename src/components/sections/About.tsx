@@ -38,7 +38,7 @@ export const About: React.FC = () => {
               transition={{ duration: 0.6 }}
               className="glass-card p-8 rounded-3xl border hover:border-primary/20 transition-all duration-300 relative"
             >
-              <h3 className="text-2xl font-bold font-display text-text-heading leading-tight">
+              <h3 className="text-xl sm:text-2xl font-semibold font-display text-text-heading leading-snug">
                 {COMPANY_CONFIG.experienceYears}+ Years of Supply Logistics Excellence
               </h3>
               
@@ -51,7 +51,7 @@ export const About: React.FC = () => {
                   <Award className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-text-heading">Official Direct Distributor</h4>
+                  <h4 className="text-sm font-semibold text-text-heading">Official Direct Distributor</h4>
                   <p className="text-xs text-text-muted">Nepal Ministry of Industry Registered</p>
                 </div>
               </div>
@@ -73,7 +73,7 @@ export const About: React.FC = () => {
                 <div className="w-10 h-10 rounded-lg bg-primary/15 text-primary flex items-center justify-center">
                   <Target className="w-5 h-5" />
                 </div>
-                <h4 className="font-display font-bold text-lg text-text-heading">Our Mission</h4>
+                <h4 className="font-display font-semibold text-base text-text-heading">Our Mission</h4>
                 <p className="text-xs text-text-body font-sans leading-relaxed">
                   {COMPANY_CONFIG.mission}
                 </p>
@@ -90,7 +90,7 @@ export const About: React.FC = () => {
                 <div className="w-10 h-10 rounded-lg bg-accent/15 text-accent flex items-center justify-center">
                   <Compass className="w-5 h-5" />
                 </div>
-                <h4 className="font-display font-bold text-lg text-text-heading">Our Vision</h4>
+                <h4 className="font-display font-semibold text-base text-text-heading">Our Vision</h4>
                 <p className="text-xs text-text-body font-sans leading-relaxed">
                   {COMPANY_CONFIG.vision}
                 </p>
@@ -127,10 +127,10 @@ export const About: React.FC = () => {
         {/* Timeline of Company Achievements / Brand Journey */}
         <div className="mt-24">
           <div className="text-center mb-12">
-            <Badge variant="accent" className="font-bold tracking-widest text-[9px] mb-2 uppercase">
+            <Badge variant="accent" className="font-semibold tracking-wider text-[9px] mb-2 uppercase">
               Business Timeline &amp; Brand Journey
             </Badge>
-            <h3 className="text-2xl md:text-3xl font-display font-black text-text-heading tracking-tight">
+            <h3 className="text-xl md:text-2xl font-display font-semibold text-text-heading tracking-tight">
               Our Journey with Leading Brands
             </h3>
             <p className="text-xs text-text-muted font-sans mt-2 max-w-xl mx-auto">
@@ -160,27 +160,27 @@ export const About: React.FC = () => {
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                       <div className="flex items-center gap-2">
                         {/* Year Badge */}
-                        <span className="inline-flex px-3 py-1 rounded-lg text-xs font-black font-display tracking-wide bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
+                        <span className="inline-flex px-2.5 py-0.5 rounded-md text-xs font-semibold font-display tracking-wide bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
                           {achievement.year}
                         </span>
 
                         {/* Category Badge if applicable */}
                         {achievement.category && (
-                          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-primary/10 text-primary border border-primary/25">
+                          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-primary/10 text-primary border border-primary/25">
                             <Layers className="w-3 h-3" /> {achievement.category} Category
                           </span>
                         )}
                       </div>
 
                       {/* Association Status Pill */}
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 shadow-xs">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 shadow-xs">
+                        <CheckCircle2 className="w-3 h-3 text-emerald-500" />
                         Available Partner Brand
                       </span>
                     </div>
 
                     {/* Title */}
-                    <h4 className="text-lg font-bold font-display tracking-tight text-text-heading">
+                    <h4 className="text-base font-semibold font-display tracking-tight text-text-heading">
                       {achievement.title}
                     </h4>
 

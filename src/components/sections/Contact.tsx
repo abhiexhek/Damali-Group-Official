@@ -36,7 +36,7 @@ export const Contact: React.FC = () => {
           {/* Left Column: Contact Details (Column span 6) */}
           <div className="lg:col-span-6 flex flex-col justify-between space-y-6">
             <div className="space-y-4">
-              <h3 className="font-display font-black text-xl text-slate-900 dark:text-white tracking-tight">
+              <h3 className="font-display font-semibold text-lg text-slate-900 dark:text-white tracking-tight">
                 Head Office & Logistics Hub
               </h3>
               

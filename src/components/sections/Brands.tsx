@@ -39,7 +39,7 @@ export const Brands: React.FC = () => {
             <button
               key={`brand-category-tab-${tab}`}
               onClick={() => setActiveTab(tab as BrandCategory | 'All')}
-              className={`px-5 py-2 text-xs font-bold uppercase tracking-wider rounded-full border transition-all duration-300 cursor-pointer ${
+              className={`px-4 py-1.5 text-xs font-semibold uppercase tracking-wider rounded-full border transition-all duration-300 cursor-pointer ${
                 activeTab === tab
                   ? 'bg-primary text-white border-primary shadow-md shadow-primary/15'
                   : 'bg-surface/50 hover:bg-hover-bg border-border-color text-text-body'

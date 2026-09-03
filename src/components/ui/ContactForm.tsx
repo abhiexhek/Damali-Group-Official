@@ -131,7 +131,7 @@ export const ContactForm: React.FC = () => {
       {/* Background radial accent */}
       <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl pointer-events-none" />
 
-      <h3 className="text-xl md:text-2xl font-bold font-display tracking-tight text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+      <h3 className="text-lg md:text-xl font-semibold font-display tracking-tight text-slate-900 dark:text-white mb-1.5 flex items-center gap-2">
         B2B Business Inquiry Form
       </h3>
       <p className="text-xs text-slate-500 dark:text-slate-400 mb-6 font-sans leading-relaxed">
@@ -144,7 +144,7 @@ export const ContactForm: React.FC = () => {
             <CheckCircle className="w-6 h-6" />
           </div>
           
-          <h4 className="text-lg font-bold font-display text-emerald-400">Inquiry Captured Successfully!</h4>
+          <h4 className="text-base font-semibold font-display text-emerald-400">Inquiry Captured Successfully!</h4>
           
           <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
             {responseMsg}

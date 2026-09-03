@@ -44,7 +44,7 @@ export const BrandCard: React.FC<BrandCardProps> = ({
 
       {/* Brand Info */}
       <div className="mt-4 w-full">
-        <h4 className="font-display font-bold text-sm text-text-heading group-hover:text-primary transition-colors duration-300">
+        <h4 className="font-display font-semibold text-sm text-text-heading group-hover:text-primary transition-colors duration-300">
           {brand.name}
         </h4>
         <p className="mt-1.5 text-xs text-text-muted line-clamp-2 min-h-[2rem] leading-relaxed">

@@ -60,12 +60,12 @@ export const StatisticCard: React.FC<StatisticCardProps> = ({ stat, index }) => 
       {/* Background glow orb */}
       <div className="absolute -right-10 -bottom-10 w-24 h-24 rounded-full bg-primary/5 blur-xl group-hover:bg-primary/10 transition-all duration-500" />
       
-      <div className="text-4xl md:text-5xl font-extrabold font-display tracking-tight text-primary flex items-baseline">
+      <div className="text-2xl md:text-3xl font-semibold font-display tracking-tight text-primary flex items-baseline">
         <span>{isNaN(numericValue) ? stat.value : count}</span>
         {!isNaN(numericValue) && <span className="text-accent">{suffix}</span>}
       </div>
       
-      <div className="mt-2 font-display text-base font-semibold text-text-heading">
+      <div className="mt-1.5 font-display text-sm font-medium text-text-heading">
         {stat.label}
       </div>
       

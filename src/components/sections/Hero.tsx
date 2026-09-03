@@ -34,7 +34,7 @@ export const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Badge variant="primary" className="gap-1.5 px-3.5 py-1.5 text-[10px] tracking-widest font-bold font-display">
+            <Badge variant="primary" className="gap-1.5 px-3 py-1 text-[10px] tracking-wider font-semibold font-display">
               <Sparkles className="w-3.5 h-3.5" /> Direct Authorized Distributor
             </Badge>
           </motion.div>
@@ -43,7 +43,7 @@ export const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display tracking-tight text-text-heading leading-tight"
+            className="text-2xl sm:text-3xl lg:text-[38px] font-semibold font-display tracking-tight text-text-heading leading-snug sm:leading-tight"
           >
             Trusted Distributor of Leading{' '}
             <span 
@@ -66,7 +66,7 @@ export const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base sm:text-lg text-text-body font-sans leading-relaxed max-w-xl"
+            className="text-sm sm:text-base text-text-body font-sans leading-relaxed max-w-lg"
           >
             Empowering Nepalese enterprise and retail merchants with 100% genuine inventory, cold-chain distribution, and direct manufacturer warranties. Officially representing global leaders in FMCG, electronics, and power backup systems.
           </motion.p>

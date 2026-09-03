@@ -32,9 +32,9 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-3"
+          className="mb-2.5"
         >
-          <Badge variant="primary" className="px-4 py-1 text-[11px] tracking-widest font-bold">
+          <Badge variant="primary" className="px-3 py-0.5 text-[10px] tracking-wider font-semibold">
             {badge}
           </Badge>
         </motion.div>
@@ -45,7 +45,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className="text-3xl md:text-4xl lg:text-5xl font-bold font-display tracking-tight text-text-heading"
+        className="text-2xl sm:text-3xl font-semibold font-display tracking-tight text-text-heading"
       >
         {title}
       </motion.h2>
@@ -56,7 +56,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-4 text-base md:text-lg text-text-muted max-w-2xl mx-auto font-sans leading-relaxed"
+          className="mt-2.5 text-sm sm:text-base text-text-muted max-w-xl mx-auto font-sans leading-relaxed"
           style={{ marginLeft: isCenter ? 'auto' : '0', marginRight: isCenter ? 'auto' : '0' }}
         >
           {subtitle}

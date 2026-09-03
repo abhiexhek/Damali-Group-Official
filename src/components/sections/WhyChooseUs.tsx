@@ -50,17 +50,17 @@ export const WhyChooseUs: React.FC = () => {
                   <DynamicLucideIcon iconName={feature.iconName} className="w-6 h-6" />
                 </div>
 
-                <h4 className="font-display font-bold text-lg text-text-heading group-hover:text-primary transition-colors duration-200">
+                <h4 className="font-display font-semibold text-base text-text-heading group-hover:text-primary transition-colors duration-200">
                   {feature.title}
                 </h4>
                 
-                <p className="mt-3.5 text-sm text-text-body font-sans leading-relaxed">
+                <p className="mt-2.5 text-sm text-text-body font-sans leading-relaxed">
                   {feature.description}
                 </p>
               </div>
 
               {/* Little corner indicator lines */}
-              <div className="mt-6 pt-4 border-t border-border-color flex justify-between items-center text-[10px] text-text-muted group-hover:text-primary transition-colors duration-300 font-semibold tracking-wider uppercase">
+              <div className="mt-6 pt-4 border-t border-border-color flex justify-between items-center text-[10px] text-text-muted group-hover:text-primary transition-colors duration-300 font-medium tracking-wider uppercase">
                 <span>Authorized standards</span>
                 <span>Direct Hub</span>
               </div>
@@ -76,7 +76,7 @@ export const WhyChooseUs: React.FC = () => {
           className="mt-16 p-8 bg-gradient-to-r from-primary/10 via-accent/5 to-primary/10 border border-primary/10 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6"
         >
           <div className="space-y-1.5 text-center md:text-left">
-            <h4 className="font-display font-bold text-lg text-text-heading">
+            <h4 className="font-display font-semibold text-base text-text-heading">
               Ready to Register as an Official Retail Partner?
             </h4>
             <p className="text-xs text-text-muted font-sans max-w-xl">
@@ -85,7 +85,7 @@ export const WhyChooseUs: React.FC = () => {
           </div>
           <a
             href="#contact"
-            className="px-6 py-3 bg-primary hover:bg-primary-dark text-white text-xs font-bold uppercase tracking-wider rounded-lg shadow-md hover:shadow-lg transition-all duration-300 whitespace-nowrap"
+            className="px-6 py-3 bg-primary hover:bg-primary-dark text-white text-xs font-semibold uppercase tracking-wider rounded-lg shadow-md hover:shadow-lg transition-all duration-300 whitespace-nowrap"
           >
             Submit Dealer Request
           </a>

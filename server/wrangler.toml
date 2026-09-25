@@ -12,7 +12,7 @@ EMAIL_FROM = "Nepal Distributors <inquiries@resend.dev>"
 [[d1_databases]]
 binding = "DB"
 database_name = "nepal-distributors-db"
-database_id = "placeholder-d1-database-id"
+database_id = "16927335-d0d1-4e5f-9a02-3ab333694634"
 
 # [[kv_namespaces]]
 # binding = "RATE_LIMIT_KV"

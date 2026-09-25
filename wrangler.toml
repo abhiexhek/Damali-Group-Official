@@ -14,9 +14,9 @@ EMAIL_FROM = "Nepal Distributors <inquiries@resend.dev>"
 # Run `npx wrangler d1 create nepal-distributors-db` to provision your D1 database.
 # Paste the resulting database_id below:
 [[d1_databases]]
-binding = "DB"
+binding = "nepal_distributors_db"
 database_name = "nepal-distributors-db"
-database_id = "placeholder-d1-database-id"
+database_id = "16927335-d0d1-4e5f-9a02-3ab333694634"
 
 # Cloudflare KV Namespace for Distributed Rate Limiting (Optional but recommended)
 # Run `npx wrangler kv:namespace create RATE_LIMIT_KV`

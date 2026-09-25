@@ -8,7 +8,7 @@ compatibility_flags = ["nodejs_compat"]
 [vars]
 ENVIRONMENT = "production"
 COMPANY_RECEIVER_EMAIL = "abiseksbd@gmail.com"
-EMAIL_FROM = "Nepal Distributors <inquiries@resend.dev>"
+EMAIL_FROM = "Nepal Distributors <inquirie@resend.dev>"
 
 # Cloudflare D1 Database Binding for B2B Inquiries
 # Run `npx wrangler d1 create nepal-distributors-db` to provision your D1 database.
@@ -28,3 +28,5 @@ database_id = "16927335-d0d1-4e5f-9a02-3ab333694634"
 # Set your Resend API Key or SendGrid Key securely via Wrangler CLI:
 #   npx wrangler secret put RESEND_API_KEY
 # Or via Cloudflare Dashboard: Workers & Pages -> Your Worker -> Settings -> Variables -> Secrets.
+
+

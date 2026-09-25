@@ -8,7 +8,7 @@ compatibility_flags = ["nodejs_compat"]
 [vars]
 ENVIRONMENT = "production"
 COMPANY_RECEIVER_EMAIL = "abiseksbd@gmail.com"
-EMAIL_FROM = "Nepal Distributors <inquiries@resend.dev>"
+EMAIL_FROM = "Nepal Distributors <inquirie@resend.dev>"
 
 # Cloudflare D1 Database Binding for B2B Inquiries
 # Run `npx wrangler d1 create nepal-distributors-db` to provision your D1 database.

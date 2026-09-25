@@ -1,125 +1,216 @@
-# Nepal Distributors Portal - Corporate Distributor Landing Page
+# Nepal Distributors Portal - Cloudflare Monorepo Architecture
 
-An enterprise-grade, high-performance, responsive single-page landing website and automated inquiry manager tailored for authorized Fast-Moving Consumer Goods (FMCG) and Home Appliance distributors in Nepal.
+A modern, enterprise-grade B2B distributor landing page and automated dealer inquiry system for **Damali Group** (official FMCG & Home Appliance distributor in Morang, Nepal). 
 
-Developed in **Vite + React (TypeScript) + Tailwind CSS v4 + Express** architecture.
-
----
-
-## 🚀 Key Architectural Strengths
-
-1. **Dual-Stack Server-Side Ingress (`server.ts` + Express)**:
-   A clean Full-Stack routing system. Serves a rich, animated single-page client interface and exposes high-performance API endpoints (`/api/contact`) to process, filter, and archive dealer proposals securely on the server-side.
-2. **Dynamic Brand Theme Preset Swapping**:
-   Supports instantaneous visual redesign presets directly in the UI. Features themed variables for:
-   * **Coca-Cola Theme** (Vibrant Red)
-   * **Samsung Theme** (Royal Tech Blue)
-   * **LG Theme** (Sophisticated Burgundy)
-   * **Panasonic Theme** (Deep Royal Blue)
-   * **Modern Dark** (Futuristic Slate)
-   * **Modern Light** (Clean Soft-Grey)
-   All parameters (primary, accent, background gradients, buttons, card boundaries, icons) automatically update instantly utilizing CSS Custom Variables mapped directly into Tailwind CSS v4 `@theme` layers.
-3. **Double-Security Anti-Spam & Validation**:
-   Protects the dealer portal using zero-friction client-side visual checks combined with **Honeypot (`website_honey`)** bot filters and full structural validation on the server before processing.
-4. **CSV Database Archiving & Mail Delivery**:
-   Submissions are securely escaped to prevent **CSV injection attacks** and appended to `inquiries.csv` on the server disk. It attempts email delivery to the firm using secure `nodemailer` SMTP, falling back gracefully to console logs with precise debug instructions if SMTP environment variables are unconfigured.
-5. **Interactive Catalog Synchronization**:
-   Features a state-synchronized brand grid and product catalog. Clicking any official brand card in the brand overview immediately applies active catalog tags, filters products, and smoothly scrolls the user down to the corresponding products.
+Refactored from an Express monolith into a clean, decoupled monorepo optimized for **Cloudflare Pages** (frontend) and **Cloudflare Workers** (serverless backend).
 
 ---
 
-## 📁 System Folder Map
+## 📁 Monorepo Layout
 
 ```text
 /
-├── server.ts                 # Full-Stack Express Server (API routes + Vite Middleware)
-├── inquiries.csv             # B2B Local Database File (Auto-generated on first form submission)
-├── package.json              # System configuration and compilation scripts
-├── tsconfig.json             # TypeScript configurations
-├── vite.config.ts            # Vite asset configurations
-├── src/
-│   ├── main.tsx              # React mounting root
-│   ├── App.tsx               # Primary layout manager and Providers wrapper
-│   ├── index.css             # Tailwind CSS v4 layers + custom typography & glass-morphism classes
-│   ├── types/
-│   │   └── index.ts          # Centralized, strictly typed TypeScript interfaces
-│   ├── config/
-│   │   ├── company.ts        # Central editable B2B parameters (Address, Phones, Mission, Maps URL)
-│   │   ├── themes.ts         # Visual theme preset declarations (Hex values, background style strings)
-│   │   ├── navigation.ts     # Main header links & footer link structures
-│   │   └── seo.ts            # Metadata parameters (Titles, description, Open Graph)
-│   ├── data/
-│   │   ├── brands.ts         # Complete list of official B2B brands (LG, Samsung, Coke, Parle, etc.)
-│   │   └── products.ts       # Complete catalog listing with technical specifications
-│   ├── providers/
-│   │   └── ThemeProvider.tsx # Dynamic State-driven CSS variable injection manager
-│   ├── hooks/
-│   │   └── useTheme.ts       # React useContext hook proxy
-│   └── components/
-│       ├── common/
-│       │   ├── Container.tsx      # Fluid responsive block alignment container
-│       │   ├── Badge.tsx          # Multi-variant commercial tags indicator
-│       │   ├── SectionTitle.tsx   # Consistent headers with motion entries
-│       │   └── Button.tsx         # Multi-variant interactive actions trigger
-│       ├── layout/
-│       │   ├── Navbar.tsx         # Sticky navigation + brand preset selector dropdown
-│       │   └── Footer.tsx         # VAT notices + social maps + direct CSV export tool
-│       ├── ui/
-│       │   ├── BrandCard.tsx      # Vector brand logo display card
-│       │   ├── ProductCard.tsx    # Technical catalog display with expandable spec sheets
-│       │   ├── StatisticCard.tsx  # Interactive scrolling Count-Up numbers card
-│       │   └── ContactForm.tsx    # Validation-locked portal submission sheet
+├── client/                     # Frontend Application (Vite + React SPA)
+│   ├── public/                 # Static assets, brand logos, favicons
+│   ├── src/                    # UI Components, pages, hooks, styling
+│   │   ├── components/         # Modular layout, hero, brand showcase, contact form
+│   │   ├── config/             # Company details, SEO, themes, navigation
+│   │   ├── data/               # Official brand profiles & product listings
+│   │   ├── providers/          # ThemeProvider for real-time brand switching
+│   │   ├── App.tsx             # Root application component
+│   │   ├── main.tsx            # Vite entry point
+│   │   └── index.css           # Tailwind CSS v4 styling & typography
+│   ├── index.html              # HTML entry template
+│   ├── vite.config.ts          # Vite configuration with static build to dist/
+│   ├── tsconfig.json           # Client TypeScript configuration
+│   └── package.json            # Client dependencies & scripts
+│
+├── server/                     # Backend Application (Cloudflare Workers API)
+│   ├── src/
+│   │   ├── index.ts            # Hono router entry point (export default app)
+│   │   ├── db.ts               # Cloudflare D1 database operations & fallback
+│   │   ├── email.ts            # HTTP transactional email dispatcher (Resend / SendGrid)
+│   │   ├── security.ts         # IP rate limiting, honeypot filter, XSS escaping, validation
+│   │   └── types.ts            # Worker environment bindings & request schemas
+│   ├── schema.sql              # D1 SQL migration schema for `inquiries` table
+│   ├── wrangler.toml           # Server-level Cloudflare Workers configuration
+│   ├── tsconfig.json           # Cloudflare Workers TypeScript configuration
+│   └── package.json            # Server dependencies & scripts
+│
+├── server.ts                   # Full-stack dev bridge (runs Express + Vite on port 3000)
+├── inquiries.json              # Local development database mirror
+├── wrangler.toml               # Root Cloudflare Workers deployment configuration
+├── .env.example                # Template for environment variables and secrets
+└── package.json                # Monorepo orchestration scripts (dev, build, lint)
 ```
 
 ---
 
-## ⚙️ Administration & Environmental Setup
+## ⚡ Core Technical Adaptations for Cloudflare
 
-To configure secure automatic email forwarding when inquiries are received, define the following variables inside your hosting platform environment variables (Secrets panel in AI Studio):
+1. **Routing Layer (`server/src/index.ts`)**:
+   - Replaced Node `express` and `app.listen` with **Hono**, a blazing-fast, lightweight router designed natively for edge environments like Cloudflare Workers.
+   - Built-in CORS support enables seamless cross-domain requests between Cloudflare Pages and Workers.
 
-```env
-# SERVER CONFIGURED SMTP SECRETS
-SMTP_HOST="smtp.yourmailserver.com"
-SMTP_PORT="587"
-SMTP_USER="sender-address@company.com"
-SMTP_PASS="secure-smtp-password"
-COMPANY_RECEIVER_EMAIL="inquiries@company.com"
-```
+2. **Persistent Storage with Cloudflare D1 (`server/src/db.ts` & `server/schema.sql`)**:
+   - Replaced local filesystem storage (`inquiries.json` via Node `fs`) with **Cloudflare D1**, Cloudflare's serverless SQLite relational database.
+   - Automatically falls back gracefully to in-memory persistence during local non-D1 testing so forms never fail.
 
-*Note: If these values are omitted or kept blank, the system operates in **Simulation & Preview mode**—automatically printing full styled email logs to the console while successfully recording data inside `inquiries.csv`.*
+3. **HTTP-Based Email Delivery (`server/src/email.ts`)**:
+   - Replaced TCP-based `nodemailer` SMTP sockets (which are blocked in serverless edge runtimes) with HTTP `fetch` integration for **Resend** (recommended) and **SendGrid**.
+   - Features rich HTML notification templates with auto-formatted inquiry tables and contact metadata.
+   - Graceful simulation fallback: if keys are not set, prints formatted logs so development and testing proceed without errors.
+
+4. **Edge Security & Anti-Spam (`server/src/security.ts`)**:
+   - **Distributed Rate Limiting**: IP rate limiting backed by Cloudflare KV (`RATE_LIMIT_KV`), with in-memory fallback.
+   - **Honeypot Protection**: Silent bot suppression using the `website_honey` trap field.
+   - **XSS & Injection Sanitization**: Comprehensive HTML entity escaping via `escapeHtml()`.
+   - **Strict Input Length & Format Validation**: Enforces length constraints, regex email checks, and minimum phone length.
+
+5. **Client Configuration (`client/src/components/ui/ContactForm.tsx`)**:
+   - Automatically defaults to `/api/contact` for same-domain or reverse-proxy deployments.
+   - Supports optional `VITE_API_BASE_URL` when hosting the frontend on a different domain than the Cloudflare Worker.
 
 ---
 
-## 🛠️ Development & Production Workflows
+## 🛠️ Step-by-Step Developer Setup & Deployment Guide
 
-### 1. Installation of Dependencies
-Ensure Node modules are populated:
+### 1. Local Monorepo Development
+
+To run the unified full-stack application locally on [http://localhost:3000](http://localhost:3000):
+
 ```bash
 npm install
-```
-
-### 2. Launch Local Development Server
-Boots the full Express server with live Vite assets compilation:
-```bash
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### 3. Build & Compile for Production
-Generates optimized static frontend assets and bundles the Node backend using `esbuild` to prevent ES import resolution issues:
+This runs `server.ts`, which serves the Vite client in middleware mode and proxies `/api/*` to the Cloudflare Workers Hono router.
+
+---
+
+### 2. Setting Up Cloudflare D1 Database
+
+#### Step A: Provision D1 Database
+Make sure you are logged into Wrangler:
 ```bash
-npm run build
+npx wrangler login
 ```
 
-### 4. Run Production Server
-Launches the standalone bundled file server in host environments:
+Create a new Cloudflare D1 database:
 ```bash
-npm run start
+npx wrangler d1 create nepal-distributors-db
+```
+
+Wrangler will output configuration information similar to:
+```toml
+[[d1_databases]]
+binding = "DB"
+database_name = "nepal-distributors-db"
+database_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+```
+
+#### Step B: Add Database ID to `wrangler.toml`
+Update the `database_id` in `wrangler.toml` (and `server/wrangler.toml`):
+```toml
+[[d1_databases]]
+binding = "DB"
+database_name = "nepal-distributors-db"
+database_id = "YOUR_ACTUAL_D1_DATABASE_ID"
+```
+
+#### Step C: Execute Database Schema Migration
+Run the initial SQL schema migration to create the `inquiries` table:
+
+- **For Local Testing:**
+  ```bash
+  npx wrangler d1 execute nepal-distributors-db --local --file=server/schema.sql
+  ```
+
+- **For Production Cloudflare:**
+  ```bash
+  npx wrangler d1 execute nepal-distributors-db --remote --file=server/schema.sql
+  ```
+
+---
+
+### 3. Setting Up Resend (Transactional Email)
+
+#### Step A: Obtain API Key
+1. Sign up for free at [Resend.com](https://resend.com).
+2. Generate an API Key under **API Keys**.
+3. (Optional) Verify your custom company domain under **Domains** (or use `onboarding@resend.dev` for initial testing).
+
+#### Step B: Configure Secrets in Cloudflare
+
+- **Option 1: Via Wrangler CLI (Recommended)**
+  ```bash
+  npx wrangler secret put RESEND_API_KEY
+  # When prompted, paste your Resend key (e.g., re_123456789_abcdefg)
+  ```
+
+- **Option 2: Via Cloudflare Dashboard**
+  1. Open **Cloudflare Dashboard** -> **Compute (Workers & Pages)**.
+  2. Select your Worker: `nepal-distributors-api`.
+  3. Navigate to **Settings** -> **Variables and Secrets**.
+  4. Click **Add** under **Secrets**, enter variable name `RESEND_API_KEY`, enter value, and click **Save and Deploy**.
+
+#### Step C: Set Notification Email Addresses
+In `wrangler.toml` (under `[vars]`):
+```toml
+[vars]
+ENVIRONMENT = "production"
+COMPANY_RECEIVER_EMAIL = "distributor-inquiries@example.com"
+EMAIL_FROM = "Nepal Distributors <inquiries@yourdomain.com>"
 ```
 
 ---
 
-## 🔒 Security & Spam Protections
+### 4. Deploying the Backend to Cloudflare Workers
 
-* **Honeypot Filter**: Includes a hidden `website_honey` form field. Bots automatically fill this input, which triggers immediate, silent suppression of their submissions on the server, saving database storage and processing power.
-* **Input Validation & Escaping**: All inputs are matched against rigorous format expressions before writing, and CSV values are systematically escaped using quotes to block Excel macro-injections.
+From the project root:
+```bash
+npm run deploy:worker
+```
+*(Or inside `/server`: `npx wrangler deploy`)*
+
+Cloudflare will deploy your API and output your public Worker URL:
+`https://nepal-distributors-api.<your-subdomain>.workers.dev`
+
+You can verify the deployment by visiting:
+`https://nepal-distributors-api.<your-subdomain>.workers.dev/api/health`
+
+---
+
+### 5. Deploying the Frontend to Cloudflare Pages
+
+#### Step A: Build Static Production Assets
+```bash
+npm run build:client
+```
+This generates the optimized static bundle in `client/dist/`.
+
+#### Step B: Deploy to Cloudflare Pages
+
+- **Via Wrangler CLI:**
+  ```bash
+  npm run deploy:pages
+  ```
+  *(Or: `npx wrangler pages deploy client/dist --project-name=nepal-distributors`)*
+
+- **Via Cloudflare Git Integration (Automated CI/CD):**
+  1. Go to **Cloudflare Dashboard** -> **Pages** -> **Connect to Git**.
+  2. Select your repository.
+  3. Set **Framework preset**: `Vite`.
+  4. Set **Build command**: `cd client && npm run build` (or `npm run build:client`).
+  5. Set **Build output directory**: `client/dist`.
+  6. Under **Environment variables**, if your API Worker is on a different domain, add:
+     - `VITE_API_BASE_URL`: `https://nepal-distributors-api.<your-subdomain>.workers.dev`
+
+---
+
+## 🔒 Security Best Practices Implemented
+
+- **No Exposed Secrets**: All sensitive credentials (`RESEND_API_KEY`, etc.) are injected strictly on the server-side via Cloudflare Worker bindings / secrets.
+- **Strict Content-Type Enforcements**: JSON payload validation rejects malformed requests before processing.
+- **SQL Parameterization**: All D1 database queries utilize `.bind(...)` parameterized statements to eliminate SQL injection risks.
+- **HTML Sanitization**: Form inputs are escaped before rendering in email bodies to protect email clients from script injection.

@@ -1,0 +1,19 @@
+# Cloudflare Workers Configuration (Server subfolder context)
+name = "nepal-distributors-api"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+ENVIRONMENT = "production"
+COMPANY_RECEIVER_EMAIL = "distributor-inquiries@example.com"
+EMAIL_FROM = "Nepal Distributors <inquiries@resend.dev>"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "nepal-distributors-db"
+database_id = "placeholder-d1-database-id"
+
+# [[kv_namespaces]]
+# binding = "RATE_LIMIT_KV"
+# id = "placeholder-kv-namespace-id"

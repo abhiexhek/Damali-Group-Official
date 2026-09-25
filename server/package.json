@@ -1,0 +1,23 @@
+{
+  "name": "nepal-distributors-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cloudflare Workers serverless backend API powered by Hono, D1, and Resend",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "build": "tsc --noEmit",
+    "d1:init:local": "wrangler d1 execute nepal-distributors-db --local --file=./schema.sql",
+    "d1:init:remote": "wrangler d1 execute nepal-distributors-db --remote --file=./schema.sql"
+  },
+  "dependencies": {
+    "hono": "^4.7.4"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250224.0",
+    "typescript": "~5.8.2",
+    "wrangler": "^3.111.0"
+  }
+}

@@ -126,7 +126,7 @@ export const Navbar: React.FC = () => {
             href="#contact"
             className="px-5 py-2.5 rounded-lg text-xs font-bold tracking-wider uppercase text-white bg-primary hover:bg-primary-dark shadow-md shadow-primary/10 hover:shadow-primary/20 transition-all duration-300"
           >
-            Become Dealer
+            Product Inquiry
           </a>
         </div>
 
@@ -190,7 +190,7 @@ export const Navbar: React.FC = () => {
                   onClick={() => setIsOpen(false)}
                   className="w-full text-center py-3 rounded-lg text-sm font-semibold tracking-wider uppercase text-white bg-primary hover:bg-primary-dark shadow-md"
                 >
-                  Become Dealer
+                  Product Inquiry
                 </a>
               </div>
             </div>

@@ -103,7 +103,7 @@ export const Hero: React.FC = () => {
                 icon={<ArrowRight className="w-4 h-4" />}
                 iconPosition="right"
               >
-                Inquire Dealership
+                For Inquiry
               </Button>
             </a>
           </motion.div>

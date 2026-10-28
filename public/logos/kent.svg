@@ -1,4 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" fill="none">
-  <text x="110" y="34" dominant-baseline="middle" text-anchor="middle" fill="#0072CE" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="30" letter-spacing="3">KENT</text>
-  <text x="110" y="49" dominant-baseline="middle" text-anchor="middle" fill="#00A3E0" font-family="sans-serif" font-weight="800" font-size="10" letter-spacing="1.5">Mineral RO™</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <!-- Outer circle badge with subtle border -->
+  <circle cx="150" cy="150" r="146" fill="#FFFFFF" stroke="#000000" stroke-width="2.5"/>
+  
+  <!-- Main dark blue KENT rectangle box -->
+  <rect x="75" y="90" width="150" height="42" fill="#00387A"/>
+  <text x="150" y="123" fill="#FFFFFF" font-family="'Arial Black', 'Helvetica Black', sans-serif" font-weight="900" font-size="34" letter-spacing="2" text-anchor="middle">KENT</text>
+  
+  <!-- Cyan wave banner strip -->
+  <path d="M 75 132 L 225 132 L 225 168 Q 150 178 75 168 Z" fill="#90D5F7"/>
+  <path d="M 75 132 Q 150 142 225 132 L 225 138 Q 150 148 75 138 Z" fill="#C5EAFD" opacity="0.6"/>
+  
+  <!-- Mineral RO text in wave -->
+  <text x="150" y="152" fill="#00387A" font-family="'Arial', sans-serif" font-style="italic" font-weight="900" font-size="16.5" letter-spacing="0.5" text-anchor="middle">Mineral RO™</text>
+  
+  <!-- Water Purifiers in blue strip -->
+  <rect x="75" y="168" width="150" height="22" fill="#00387A"/>
+  <text x="150" y="183" fill="#FFFFFF" font-family="'Arial', sans-serif" font-weight="700" font-size="11.5" letter-spacing="0.8" text-anchor="middle">Water Purifiers</text>
+  
+  <!-- HOUSE of PURITY in magenta / pink -->
+  <text x="150" y="214" fill="#E6007E" font-family="'Arial', sans-serif" font-weight="900" font-size="15" letter-spacing="2.5" text-anchor="middle">
+    HOUSE <tspan font-style="italic" font-weight="600" font-size="13">of</tspan> PURITY
+  </text>
 </svg>

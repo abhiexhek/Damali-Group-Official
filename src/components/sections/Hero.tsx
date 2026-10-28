@@ -12,6 +12,7 @@ import { Badge } from '../common/Badge';
 import { ArrowRight, Sparkles, CheckCircle, ShieldCheck, Layers } from 'lucide-react';
 
 import { DamaliLogo } from '../ui/DamaliLogo';
+import { resolveAssetPath } from '../ui/BrandLogo';
 
 export const Hero: React.FC = () => {
   return (
@@ -103,7 +104,7 @@ export const Hero: React.FC = () => {
                 icon={<ArrowRight className="w-4 h-4" />}
                 iconPosition="right"
               >
-                For Inquiry
+                Inquire Dealership
               </Button>
             </a>
           </motion.div>
@@ -132,8 +133,8 @@ export const Hero: React.FC = () => {
               className="absolute w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-radial from-primary/25 via-primary/5 to-transparent pointer-events-none -z-10 blur-2xl"
             />
 
-            {/* Official Authentic 2D Damali Logo with smooth breathing float */}
-            <DamaliLogo size="hero" showText={true} animated={true} className="relative z-10" />
+            {/* Official Authentic 3D Damali Logo with smooth interactive movement */}
+            <DamaliLogo size="hero" showText={true} use3D={true} className="relative z-10" />
           </motion.div>
 
           {/* ================= SATELLITE ORBIT BRAND LOGOS (ZERO COVER / ZERO OVERLAP) ================= */}
@@ -153,7 +154,12 @@ export const Hero: React.FC = () => {
               whileHover={{ scale: 1.15, zIndex: 50 }}
               className="absolute pointer-events-auto z-30 glass-card px-3.5 py-1.5 rounded-full flex items-center shadow-lg hover:shadow-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 transition-all cursor-pointer select-none"
             >
-              <img src="/logos/kent.svg" alt="Kent" className="h-4 sm:h-4.5 w-auto object-contain" />
+              <img 
+                src={resolveAssetPath('/logos/kent.svg')} 
+                alt="Kent" 
+                className="h-4 sm:h-4.5 w-auto object-contain rounded-full" 
+                onError={(e) => { e.currentTarget.src = resolveAssetPath('/logos/kent.jpg'); }}
+              />
             </motion.div>
 
             {/* 2. Coca-Cola Badge - Top-Right */}
@@ -167,7 +173,7 @@ export const Hero: React.FC = () => {
               whileHover={{ scale: 1.15, zIndex: 50 }}
               className="absolute pointer-events-auto z-30 glass-card px-4 py-1.5 rounded-full flex items-center shadow-lg hover:shadow-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 transition-all cursor-pointer select-none"
             >
-              <img src="/logos/coca-cola.svg" alt="Coca-Cola" className="h-4.5 sm:h-5 w-auto object-contain" />
+              <img src={resolveAssetPath('/logos/coca-cola.svg')} alt="Coca-Cola" className="h-4.5 sm:h-5 w-auto object-contain" />
             </motion.div>
 
             {/* 3. Haier Badge - Right */}
@@ -181,7 +187,12 @@ export const Hero: React.FC = () => {
               whileHover={{ scale: 1.15, zIndex: 50 }}
               className="absolute pointer-events-auto z-30 glass-card px-3.5 py-1.5 rounded-full flex items-center shadow-lg hover:shadow-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 transition-all cursor-pointer select-none"
             >
-              <img src="/logos/haier.svg" alt="Haier" className="h-3.5 sm:h-4 w-auto object-contain" />
+              <img 
+                src={resolveAssetPath('/logos/haier.svg')} 
+                alt="Haier" 
+                className="h-3.5 sm:h-4 w-auto object-contain" 
+                onError={(e) => { e.currentTarget.src = resolveAssetPath('/logos/haier.jpg'); }}
+              />
             </motion.div>
 
             {/* 4. Frooti Badge - Bottom-Right */}
@@ -195,7 +206,7 @@ export const Hero: React.FC = () => {
               whileHover={{ scale: 1.15, zIndex: 50 }}
               className="absolute pointer-events-auto z-30 glass-card px-3.5 py-1.5 rounded-full flex items-center shadow-lg hover:shadow-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 transition-all cursor-pointer select-none"
             >
-              <img src="/logos/frooti.svg" alt="Frooti" className="h-4 sm:h-4.5 w-auto object-contain" />
+              <img src={resolveAssetPath('/logos/frooti.svg')} alt="Frooti" className="h-4 sm:h-4.5 w-auto object-contain" />
             </motion.div>
 
             {/* 5. Samsung Badge - Bottom */}
@@ -209,7 +220,12 @@ export const Hero: React.FC = () => {
               whileHover={{ scale: 1.15, zIndex: 50 }}
               className="absolute pointer-events-auto z-30 glass-card px-4 py-1.5 rounded-full flex items-center shadow-lg hover:shadow-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 transition-all cursor-pointer select-none"
             >
-              <img src="/logos/samsung.svg" alt="Samsung" className="h-4 sm:h-4.5 w-auto object-contain" />
+              <img 
+                src={resolveAssetPath('/logos/samsung.svg')} 
+                alt="Samsung" 
+                className="h-4 sm:h-4.5 w-auto object-contain rounded-sm" 
+                onError={(e) => { e.currentTarget.src = resolveAssetPath('/logos/samsung.jpg'); }}
+              />
             </motion.div>
 
             {/* 6. Red Bull Badge - Bottom-Left */}
@@ -223,7 +239,7 @@ export const Hero: React.FC = () => {
               whileHover={{ scale: 1.15, zIndex: 50 }}
               className="absolute pointer-events-auto z-30 glass-card px-3.5 py-1.5 rounded-full flex items-center shadow-lg hover:shadow-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 transition-all cursor-pointer select-none"
             >
-              <img src="/logos/red-bull.svg" alt="Red Bull" className="h-4 sm:h-4.5 w-auto object-contain" />
+              <img src={resolveAssetPath('/logos/red-bull.svg')} alt="Red Bull" className="h-4 sm:h-4.5 w-auto object-contain" />
             </motion.div>
 
             {/* 7. LG Badge - Left */}
@@ -237,7 +253,12 @@ export const Hero: React.FC = () => {
               whileHover={{ scale: 1.15, zIndex: 50 }}
               className="absolute pointer-events-auto z-30 glass-card px-3.5 py-1.5 rounded-full flex items-center shadow-lg hover:shadow-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 transition-all cursor-pointer select-none"
             >
-              <img src="/logos/lg.svg" alt="LG" className="h-4 sm:h-4.5 w-auto object-contain" />
+              <img 
+                src={resolveAssetPath('/logos/lg.svg')} 
+                alt="LG" 
+                className="h-4 sm:h-4.5 w-auto object-contain" 
+                onError={(e) => { e.currentTarget.src = resolveAssetPath('/logos/lg.jpg'); }}
+              />
             </motion.div>
 
             {/* 8. Panasonic Badge - Top-Left */}
@@ -251,7 +272,7 @@ export const Hero: React.FC = () => {
               whileHover={{ scale: 1.15, zIndex: 50 }}
               className="absolute pointer-events-auto z-30 glass-card px-3.5 py-1.5 rounded-full flex items-center shadow-lg hover:shadow-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 transition-all cursor-pointer select-none"
             >
-              <img src="/logos/panasonic.svg" alt="Panasonic" className="h-3.5 sm:h-4 w-auto object-contain" />
+              <img src={resolveAssetPath('/logos/panasonic.svg')} alt="Panasonic" className="h-3.5 sm:h-4 w-auto object-contain" />
             </motion.div>
           </div>
         </div>

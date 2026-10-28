@@ -1,5 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" fill="none">
-  <rect x="10" y="6" width="200" height="48" rx="8" fill="#C00000"/>
-  <text x="110" y="32" dominant-baseline="middle" text-anchor="middle" fill="#FFFFFF" font-family="Impact, Arial Black, sans-serif" font-weight="900" font-size="26" letter-spacing="3">BALTRA</text>
-  <text x="110" y="46" dominant-baseline="middle" text-anchor="middle" fill="#FFE500" font-family="sans-serif" font-weight="bold" font-size="8" letter-spacing="1.5">HOME APPLIANCES</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 180" width="540" height="180">
+  <rect width="540" height="180" rx="14" fill="#ED1C24"/>
+  <g fill="#FFFFFF">
+    <!-- B -->
+    <path d="M 38 42 L 78 42 C 96 42 104 51 104 62 C 104 71 98 78 88 82 C 100 86 107 94 107 106 C 107 122 93 128 76 128 L 38 128 Z M 60 59 L 60 74 L 75 74 C 82 74 86 70 86 66 C 86 61 82 59 75 59 Z M 60 92 L 60 111 L 76 111 C 84 111 88 106 88 101 C 88 96 83 92 75 92 Z"/>
+    <!-- A (Iconic Baltra Stylized Apex) -->
+    <polygon points="118,128 136,128 155,75 163,75 146,42 128,42"/>
+    <polygon points="152,42 170,42 201,128 181,128 163,80"/>
+    <!-- L -->
+    <polygon points="214,42 236,42 236,108 274,108 274,128 214,128"/>
+    <!-- T -->
+    <polygon points="282,42 344,42 344,62 324,62 324,128 302,128 302,62 282,62"/>
+    <!-- R -->
+    <path d="M 354 42 L 396 42 C 412 42 422 51 422 66 C 422 79 413 87 398 90 L 424 128 L 398 128 L 377 94 L 376 94 L 376 128 L 354 128 Z M 376 60 L 376 78 L 392 78 C 398 78 402 75 402 69 C 402 63 398 60 392 60 Z"/>
+    <!-- A -->
+    <polygon points="432,128 450,128 469,75 477,75 460,42 442,42"/>
+    <polygon points="466,42 484,42 515,128 495,128 477,80"/>
+    <!-- (R) registered mark -->
+    <circle cx="516" cy="46" r="8" fill="none" stroke="#FFFFFF" stroke-width="1.8"/>
+    <text x="516" y="50" font-family="Arial, sans-serif" font-size="9" font-weight="900" fill="#FFFFFF" text-anchor="middle">R</text>
+  </g>
 </svg>

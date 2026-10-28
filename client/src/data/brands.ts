@@ -88,7 +88,7 @@ export const BRANDS_DATA: Brand[] = [
     description: "Life's Good. Pioneering electronics, dual-inverter refrigerators, and AI wash machines.",
     originCountry: "South Korea",
     logo: "LG",
-    officialLogoUrl: "/logos/lg.svg"
+    officialLogoUrl: "/logos/lg.jpg"
   },
   {
     id: "samsung",
@@ -97,7 +97,7 @@ export const BRANDS_DATA: Brand[] = [
     description: "Inspire the world, create the future. Ultra-premium smart TVs, Bespoke refrigerators, and devices.",
     originCountry: "South Korea",
     logo: "Samsung",
-    officialLogoUrl: "/logos/samsung.svg"
+    officialLogoUrl: "/logos/samsung.jpg"
   },
   {
     id: "panasonic",
@@ -115,7 +115,7 @@ export const BRANDS_DATA: Brand[] = [
     description: "Global leader in smart home systems, deep freezers, and self-cleaning air conditioners.",
     originCountry: "China",
     logo: "Haier",
-    officialLogoUrl: "/logos/haier.svg"
+    officialLogoUrl: "/logos/haier.jpg"
   },
   {
     id: "skyworth",
@@ -124,7 +124,7 @@ export const BRANDS_DATA: Brand[] = [
     description: "State-of-the-art OLED televisions and smart cooling technology for modern living.",
     originCountry: "China",
     logo: "Skyworth",
-    officialLogoUrl: "/logos/skyworth.svg"
+    officialLogoUrl: "/logos/skyworth.jpg"
   },
   {
     id: "midea",
@@ -151,7 +151,7 @@ export const BRANDS_DATA: Brand[] = [
     description: "Classic high-durability ceiling fans, water pumps, and heavy-duty household geysers.",
     originCountry: "India",
     logo: "Crompton",
-    officialLogoUrl: "/logos/crompton.svg"
+    officialLogoUrl: "/logos/crompton.jpg"
   },
   {
     id: "symphony",
@@ -178,7 +178,7 @@ export const BRANDS_DATA: Brand[] = [
     description: "Extensive range of durable kitchenware, mixers, gas stoves, and vacuum flasks.",
     originCountry: "Nepal",
     logo: "Baltra",
-    officialLogoUrl: "/logos/baltra.svg"
+    officialLogoUrl: "/logos/baltra.jpg"
   },
   {
     id: "blue-star",
@@ -216,7 +216,7 @@ export const BRANDS_DATA: Brand[] = [
     description: "House of Purity. World-class RO + UV + UF water purifiers with digital monitoring.",
     originCountry: "India",
     logo: "Kent",
-    officialLogoUrl: "/logos/kent.svg"
+    officialLogoUrl: "/logos/kent.jpg"
   },
   {
     id: "livpure",

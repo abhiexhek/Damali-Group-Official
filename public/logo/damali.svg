@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 520" fill="none">
+  <defs>
+    <!-- Midnight navy gradient for main body -->
+    <linearGradient id="damali-body" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#142c4b" />
+      <stop offset="40%" stop-color="#0e223d" />
+      <stop offset="100%" stop-color="#081528" />
+    </linearGradient>
+
+    <!-- 3D Bevel highlight gradient -->
+    <linearGradient id="damali-bevel" x1="0%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#3d6896" />
+      <stop offset="35%" stop-color="#23466d" />
+      <stop offset="100%" stop-color="#102540" />
+    </linearGradient>
+
+
+
+    <!-- Leaf upper facet -->
+    <linearGradient id="damali-leaf-top" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#38608c" />
+      <stop offset="100%" stop-color="#1b3658" />
+    </linearGradient>
+
+    <!-- Leaf lower facet -->
+    <linearGradient id="damali-leaf-bottom" x1="0%" y1="50%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#142a47" />
+      <stop offset="100%" stop-color="#091424" />
+    </linearGradient>
+
+    <filter id="damali-shadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#05101d" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <g filter="url(#damali-shadow)">
+    <!-- 3D Beveled Backing/Left Edge for the D Stem -->
+    <path d="M 160 375 L 160 178 L 195 178 L 195 375 Z" fill="url(#damali-bevel)" />
+    
+    <!-- Base serif cut -->
+    <path d="M 125 375 L 235 375 L 235 363 L 195 363 L 195 178 L 160 178 L 160 363 L 125 363 Z" fill="url(#damali-body)" />
+
+    <!-- Main Vertical Column of D -->
+    <path d="M 165 180 L 222 180 L 222 368 L 165 368 Z" fill="url(#damali-bevel)" opacity="0.6" />
+
+    <!-- D Curve Arch - Main Outer Bow -->
+    <path d="M 205 138 C 305 138 385 190 385 270 C 385 348 305 375 220 375 L 175 375 L 175 352 L 220 352 C 285 352 342 328 342 270 C 342 210 282 165 205 165 Z" fill="url(#damali-body)" />
+
+    <!-- D Inner Spine Highlight Contour -->
+    <path d="M 220 165 C 295 165 345 205 345 270 C 345 320 295 352 220 352 Z" fill="none" stroke="url(#damali-bevel)" stroke-width="2" opacity="0.4" />
+
+    <!-- ================= 3D LEAF FLOURISHES (TOP-LEFT) ================= -->
+    <!-- 1. Main Horizontal Left Leaf -->
+    <!-- Top Half (Catching Light) -->
+    <path d="M 95 135 C 145 105 195 135 225 140 C 185 145 135 140 95 135 Z" fill="url(#damali-leaf-top)" />
+    <!-- Bottom Half (Shadowed) -->
+    <path d="M 95 135 C 140 142 185 158 225 140 C 175 165 130 155 95 135 Z" fill="url(#damali-leaf-bottom)" />
+
+    <!-- 2. Upper Diagonal Petal (Pointing Up-Right) -->
+    <path d="M 195 65 C 205 85 242 118 240 128 C 220 125 198 100 195 65 Z" fill="url(#damali-leaf-top)" />
+    <path d="M 195 65 C 215 90 238 118 240 128 C 225 120 205 95 195 65 Z" fill="url(#damali-leaf-bottom)" opacity="0.7" />
+
+    <!-- 3. Lower Droplet Petal (Curving downward under the main leaf) -->
+    <path d="M 200 152 C 225 148 260 152 260 168 C 240 178 208 172 200 152 Z" fill="url(#damali-leaf-top)" />
+
+
+
+    <!-- ================= DAMALI TYPOGRAPHY ================= -->
+    <g transform="translate(125, 435)">
+      <!-- Text DAMALI in sharp, bold geometric uppercase font matching official logo -->
+      <text x="125" y="0" text-anchor="middle" fill="#0C203B" font-family="'Inter', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-weight="900" font-size="44" letter-spacing="4">
+        DAMALI
+      </text>
+    </g>
+  </g>
+</svg>

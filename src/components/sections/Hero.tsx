@@ -140,8 +140,6 @@ export const Hero: React.FC = () => {
           {/* ================= SATELLITE ORBIT BRAND LOGOS (ZERO COVER / ZERO OVERLAP) ================= */}
           {/* Brand badges orbit strictly in their own designated radial perimeter outside the company logo, ensuring complete clearance */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-30 scale-75 sm:scale-85 md:scale-90 lg:scale-100">
-            {/* Subtle orbital ring guide behind the badges */}
-            <div className="absolute w-[450px] h-[410px] rounded-full border border-dashed border-slate-200/60 dark:border-slate-800/60 pointer-events-none -z-10" />
 
             {/* 1. Kent Badge - Top */}
             <motion.div

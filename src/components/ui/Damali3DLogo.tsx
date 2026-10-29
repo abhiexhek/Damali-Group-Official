@@ -203,30 +203,7 @@ export const Damali3DLogo: React.FC<Damali3DLogoProps> = ({
       logoGroup.add(textShadow);
     }
 
-    // Contact Grounding Radial Glow
-    const glowGeo = new THREE.PlaneGeometry(3.6, 1.2);
-    const canvasGlow = document.createElement('canvas');
-    canvasGlow.width = 128;
-    canvasGlow.height = 128;
-    const ctx = canvasGlow.getContext('2d');
-    if (ctx) {
-      const radGrad = ctx.createRadialGradient(64, 64, 5, 64, 64, 60);
-      radGrad.addColorStop(0, 'rgba(30, 64, 114, 0.45)');
-      radGrad.addColorStop(0.5, 'rgba(14, 34, 61, 0.2)');
-      radGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
-      ctx.fillStyle = radGrad;
-      ctx.fillRect(0, 0, 128, 128);
-    }
-    const glowTexture = new THREE.CanvasTexture(canvasGlow);
-    const glowMat = new THREE.MeshBasicMaterial({
-      map: glowTexture,
-      transparent: true,
-      depthWrite: false,
-      opacity: 0.55,
-    });
-    const contactGlow = new THREE.Mesh(glowGeo, glowMat);
-    contactGlow.position.set(0, showText ? -1.75 : -1.45, -0.2);
-    scene.add(contactGlow);
+
 
     // ================= INTERACTION HANDLERS =================
     const handlePointerMove = (e: PointerEvent) => {
@@ -361,9 +338,7 @@ export const Damali3DLogo: React.FC<Damali3DLogoProps> = ({
       frontMat.dispose();
       emblemTexture.dispose();
       wordmarkTexture.dispose();
-      glowTexture.dispose();
-      glowGeo.dispose();
-      glowMat.dispose();
+
 
       if (container.contains(renderer.domElement)) {
         container.removeChild(renderer.domElement);
